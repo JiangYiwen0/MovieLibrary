@@ -1,17 +1,17 @@
 public class Movie {
-   private String name;
+   private String movieName;
    private int releaseYear;
 ;
    private String director;
    private int ranking;
    private String oscarOrNot;
 
-   public void setName(String name) {
-      this.name = name;
+   public void setMovieName(String movieName) {
+      this.movieName = movieName;
    }
 
-   public String getName() {
-      return name;
+   public String getMovieName() {
+      return movieName;
    }
 
    public void setReleaseYear(int releaseYear) {
@@ -46,10 +46,13 @@ public class Movie {
       return oscarOrNot;
    }
 
-   public Movie(String setName) {
+   public Movie(String setName, int releaseYear, String director, int ranking, String oscarOrNot) {
 
    }
 
 
+   public Movie find(String movieName) {
 
+       return null;
+   }
 }

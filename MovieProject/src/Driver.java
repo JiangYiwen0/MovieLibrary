@@ -48,12 +48,37 @@ public class Driver{
     }
 
     private void findAMovie() {
-    }
+      input.nextLine();
+      System.out.print("Please enter a movie name you favor:");
+      String movieName = input.nextLine();
+      Movie findAMovie = movie.find(movieName);
 
-    private void printAllMovies() {
+      if (findAMovie != null){
+          System.out.println("What i find is"+ findAMovie);
+      }
+      else {
+          System.out.println("Sorry,i can't find the ["+ findAMovie +"] in the Movie library");
+      }
     }
 
     private void addDetails() {
+      input.nextLine();
+      System.out.print("Enter the Movie name:");
+      String movieName= input.nextLine();
+      System.out.print(" Enter the release year:");
+      int releaseYear = input.nextInt();
+      System.out.print("Enter the initials of the director's name:");
+      String director = input.nextLine();
+      System.out.print("Enter the ranking of this movie:");
+      int ranking = input.nextInt();
+      System.out.print("Is this movie win an Oscar?Yes or No?:");
+      String oscarOrNot = input.nextLine();
+
+      Movie temp = new Movie(movieName,releaseYear,director,ranking,oscarOrNot);
+      
+    }
+
+    private void printAllMovies() {
     }
 
     private void addAMovie() {
