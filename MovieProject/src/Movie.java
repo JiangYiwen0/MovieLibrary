@@ -1,4 +1,5 @@
 public class Movie {
+   public boolean add;
    private String movieName;
    private int releaseYear;
 ;
@@ -54,5 +55,9 @@ public class Movie {
    public Movie find(String movieName) {
 
        return null;
+   }
+
+   public boolean add(Movie temp) {
+      return false;
    }
 }
