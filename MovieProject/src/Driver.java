@@ -75,7 +75,7 @@ public class Driver{
       String oscarOrNot = input.nextLine();
 
       Movie temp = new Movie(movieName,releaseYear,director,ranking,oscarOrNot);
-      boolean addedIn = movie.add(temp);
+      boolean addedIn =movie.add(temp);
       if (addedIn){
           System.out.println("You have added a movie successfully in the Movie Library!");
       }
@@ -86,7 +86,7 @@ public class Driver{
 
     private void printAllMovies() {
       System.out.println("The Movie Library is:");
-      
+        
     }
 
     private void addAMovie() {
