@@ -13,11 +13,10 @@ public class Driver{
       System.out.print("""
               Movie Library Meun
               ---------
-              1)Add a movie you want
-              2)Add all the details subsequently(the release year,
+              1)Add a movie you want and Add all the details subsequently(the release year,
                 the director,the ranking win an oscar or not)
-              3)List all the movies as you want
-              4)Find a Movie 
+              2)List all the movies as you want
+              3)Find a Movie 
               0)Exit
               """);
       int option = input.nextInt();
@@ -30,9 +29,8 @@ public class Driver{
 
           switch (option){
               case 1 -> addAMovie();
-              case 2 -> addDetails();
-              case 3 -> printAllMovies();
-              case 4 -> findAMovie();
+              case 2 -> printAllMovies();
+              case 3 -> findAMovie();
               default -> System.out.println("Invaild option entered" + option);
 
           }
@@ -46,22 +44,12 @@ public class Driver{
       System.out.println("EXIT.Hope you have a nice day!");
       System.exit(0);
     }
-
-    private void findAMovie() {
-      input.nextLine();
-      System.out.print("Please enter a movie name you favor:");
-      String movieName = input.nextLine();
-      Movie findAMovie = movie.find(movieName);
-
-      if (findAMovie != null){
-          System.out.println("What i find is"+ findAMovie);
-      }
-      else {
-          System.out.println("Sorry,i can't find the ["+ findAMovie +"] in the Movie library");
-      }
+    private void setup() {
+        System.out.println("How many movies do you want to add?");
+        int numberMovies = input.nextInt();
+        Library library = new Library(numberMovies);
     }
-
-    private void addDetails() {
+    private void addAMovie() {
       input.nextLine();
       System.out.print("Enter the Movie name:");
       String movieName= input.nextLine();
@@ -77,26 +65,26 @@ public class Driver{
       boolean addedIn =movie.add(temp);
       if (addedIn){
           System.out.println("You have added a movie successfully in the Movie Library!");
+        }
+      else {
+            System.out.println("No movie added in!");
+        }
+    }
+    private void printAllMovies() {
+        System.out.println("The Movie Library is:");
+        System.out.println(Library.list());
+    }
+    private void findAMovie() {
+      input.nextLine();
+      System.out.print("Please enter a movie name you favor:");
+      String movieName = input.nextLine();
+      Movie findAMovie = movie.find(movieName);
+
+      if (findAMovie != null){
+          System.out.println("What i find is"+ findAMovie);
       }
       else {
-         System.out.println("No movie added in!");
+          System.out.println("Sorry,i can't find the ["+ findAMovie +"] in the Movie library");
       }
-    }
-
-    private void printAllMovies() {
-      System.out.println("The Movie Library is:");
-      System.out.println(Library.list());
-    }
-
-    private void addAMovie() {
-      input.nextInt();
-      System.out.print("Enter the Movie name:");
-      String movieName= input.nextLine();
-    }
-
-    private void setup() {
-      System.out.println("How many movies do you want to add?");
-      int numberMovies = input.nextInt();
-        Library library = new Library(numberMovies);
     }
 }
