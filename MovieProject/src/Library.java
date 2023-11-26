@@ -8,7 +8,7 @@ public class Library {
     private static boolean isFull(){
         return total==movies.length;
     }
-    private boolean isEmpty(){
+    private static boolean isEmpty(){
         return total == 0;
     }
     public static boolean add() {
@@ -16,6 +16,7 @@ public class Library {
           return false;
         }
         else {
+            Movie amovie = null;
             movies[total]= amovie;
             total=total+1;
             return true;
