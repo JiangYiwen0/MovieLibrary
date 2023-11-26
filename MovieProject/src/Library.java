@@ -11,7 +11,7 @@ public class Library {
     private boolean isEmpty(){
         return total == 0;
     }
-    public static boolean add(Movie amovie) {
+    public static boolean add() {
         if (isFull()){
           return false;
         }
@@ -21,7 +21,7 @@ public class Library {
             return true;
         }
     }
-    public String list(){
+    public static String list(){
         if (isEmpty()){
             return "There's no movies in the library!";
         }

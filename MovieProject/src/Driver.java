@@ -73,7 +73,6 @@ public class Driver{
       int ranking = input.nextInt();
       System.out.print("Is this movie win an Oscar?Yes or No?:");
       String oscarOrNot = input.nextLine();
-
       Movie temp = new Movie(movieName,releaseYear,director,ranking,oscarOrNot);
       boolean addedIn =movie.add(temp);
       if (addedIn){
@@ -86,12 +85,18 @@ public class Driver{
 
     private void printAllMovies() {
       System.out.println("The Movie Library is:");
-        
+      System.out.println(Library.list());
     }
 
     private void addAMovie() {
+      input.nextInt();
+      System.out.print("Enter the Movie name:");
+      String movieName= input.nextLine();
     }
 
     private void setup() {
+      System.out.println("How many movies do you want to add?");
+      int numberMovies = input.nextInt();
+        Library library = new Library(numberMovies);
     }
 }
