@@ -16,7 +16,8 @@ public class Driver{
               1)Add a movie you want and Add all the details subsequently(the release year,
                 the director,the ranking win an oscar or not)
               2)List all the movies as you want
-              3)Find a Movie 
+              3)Find a Movie
+              4）Delete a Movie
               0)Exit
               """);
       int option = input.nextInt();
@@ -31,6 +32,7 @@ public class Driver{
               case 1 -> addAMovie();
               case 2 -> printAllMovies();
               case 3 -> findAMovie();
+              case 4 -> deleteAMovie();
               default -> System.out.println("Invaild option entered" + option);
 
           }
@@ -44,6 +46,8 @@ public class Driver{
       System.out.println("EXIT.Hope you have a nice day!");
       System.exit(0);
     }
+
+
     private void setup() {
         System.out.println("How many movies do you want to add?");
         int numberMovies = input.nextInt();
@@ -86,5 +90,8 @@ public class Driver{
       else {
           System.out.println("Sorry,i can't find the ["+ findAMovie +"] in the Movie library");
       }
+    }
+
+    private void deleteAMovie() {
     }
 }
