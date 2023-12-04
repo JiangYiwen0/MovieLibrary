@@ -93,5 +93,6 @@ public class Driver{
     }
 
     private void deleteAMovie() {
+      System.out.println("What do you want to delete:");
     }
 }
