@@ -1,9 +1,11 @@
+import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Driver{
   private Scanner input = new Scanner(System.in);
   private Movie movie;
 
-  public static void main(String[] args){
+    public static void main(String[] args){
       System.out.println("This is a brief movie library!");
       Driver driver = new Driver();
       driver.setup();
@@ -94,5 +96,6 @@ public class Driver{
 
     private void deleteAMovie() {
       System.out.println("What do you want to delete:");
+
     }
 }
