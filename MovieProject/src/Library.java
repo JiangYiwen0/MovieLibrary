@@ -11,12 +11,11 @@ public class Library {
     private static boolean isEmpty(){
         return total == 0;
     }
-    public static boolean add() {
+    public static boolean add(Movie amovie) {
         if (isFull()){
           return false;
         }
         else {
-            Movie amovie = null;
             movies[total]= amovie;
             total=total+1;
             return true;
@@ -34,7 +33,7 @@ public class Library {
             return listOfMovies;
         }
     }
-    public Movie find(String movieName){
+    public static Movie find(String movieName){
         Movie foundMovie = null;
         if (!isEmpty()){
             for (int i = 0;i<total;i++){

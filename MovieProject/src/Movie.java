@@ -1,11 +1,14 @@
 public class Movie {
-   public boolean add;
+   private int id;
    private String movieName;
    private int releaseYear;
-;
    private String director;
    private int ranking;
    private String oscarOrNot;
+
+   public int getId() {return id;}
+
+   public void setId(int id) {this.id = id;}
 
    public void setMovieName(String movieName) {
       this.movieName = movieName;
@@ -47,20 +50,14 @@ public class Movie {
       return oscarOrNot;
    }
 
-   public Movie(String setName, int releaseYear, String director, int ranking, String oscarOrNot) {
-
+   public Movie(int id;String movieName, int releaseYear, String director, int ranking, String oscarOrNot) {
+      this.id = id;
+      this.movieName = movieName;
+      this.releaseYear = releaseYear;
+      this.director = director;
+      this.ranking = ranking;
+      this.oscarOrNot = oscarOrNot;
    }
 
 
-   public Movie find(String movieName) {
-
-       return null;
-   }
-
-
-   public boolean add(Movie temp) {
-      return false;
-   }
-
-}
 

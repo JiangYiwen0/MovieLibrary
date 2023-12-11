@@ -4,7 +4,6 @@ import java.util.ArrayList;
 public class Driver{
   private Scanner input = new Scanner(System.in);
   private Movie movie;
-
     public static void main(String[] args){
       System.out.println("This is a brief movie library!");
       Driver driver = new Driver();
@@ -20,7 +19,8 @@ public class Driver{
               2)List all the movies as you want
               3)Find a Movie
               4）Delete a Movie
-              0)Exit
+              5)Partial match search
+              0)Exit 
               """);
       int option = input.nextInt();
       return option;
@@ -35,6 +35,7 @@ public class Driver{
               case 2 -> printAllMovies();
               case 3 -> findAMovie();
               case 4 -> deleteAMovie();
+              case 5 -> partialSearch();
               default -> System.out.println("Invaild option entered" + option);
 
           }
@@ -49,7 +50,6 @@ public class Driver{
       System.exit(0);
     }
 
-
     private void setup() {
         System.out.println("How many movies do you want to add?");
         int numberMovies = input.nextInt();
@@ -61,14 +61,15 @@ public class Driver{
       String movieName= input.nextLine();
       System.out.print(" Enter the release year:");
       int releaseYear = input.nextInt();
-      System.out.print("Enter the initials of the director's name:");
+      System.out.println("Please enter the initials of the director's name:");
       String director = input.nextLine();
       System.out.print("Enter the ranking of this movie:");
       int ranking = input.nextInt();
-      System.out.print("Is this movie win an Oscar?Yes or No?:");
+      System.out.println("Is this movie win an Oscar?Yes or No?:");
       String oscarOrNot = input.nextLine();
-      Movie temp = new Movie(movieName,releaseYear,director,ranking,oscarOrNot);
-      boolean addedIn =movie.add(temp);
+
+      Movie film = new Movie(movieName,releaseYear,director,ranking,oscarOrNot);
+      boolean addedIn =Library.add(film);
       if (addedIn){
           System.out.println("You have added a movie successfully in the Movie Library!");
         }
@@ -84,7 +85,7 @@ public class Driver{
       input.nextLine();
       System.out.print("Please enter a movie name you favor:");
       String movieName = input.nextLine();
-      Movie findAMovie = movie.find(movieName);
+      Movie findAMovie = Library.find(movieName);
 
       if (findAMovie != null){
           System.out.println("What i find is"+ findAMovie);
@@ -97,5 +98,8 @@ public class Driver{
     private void deleteAMovie() {
       System.out.println("What do you want to delete:");
 
+    }
+    private void partialSearch() {
+        String m = input.nextLine();
     }
 }
