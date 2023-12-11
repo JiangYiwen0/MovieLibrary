@@ -12,6 +12,7 @@ public class Library {
         return total == 0;
     }
     public static boolean add(Movie amovie) {
+
         if (isFull()){
           return false;
         }

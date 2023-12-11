@@ -50,7 +50,7 @@ public class Movie {
       return oscarOrNot;
    }
 
-   public Movie(int id;String movieName, int releaseYear, String director, int ranking, String oscarOrNot) {
+   public Movie(int id,String movieName, int releaseYear, String director, int ranking, String oscarOrNot) {
       this.id = id;
       this.movieName = movieName;
       this.releaseYear = releaseYear;
@@ -58,6 +58,16 @@ public class Movie {
       this.ranking = ranking;
       this.oscarOrNot = oscarOrNot;
    }
+
+   public String toString(){
+   return "Movie{"+"id="+id+  ", movieName='" + movieName + '\'' +
+           ", releaseYear=" + releaseYear +
+           ", director='" + director + '\'' +
+           ", ranking=" + ranking +
+           ", oscarOrNot='" + oscarOrNot + '\'' +
+           '}';
+   }
+}
 
 
 
