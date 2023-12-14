@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Driver{
   private Scanner input = new Scanner(System.in);
   private Movie movie;
@@ -49,25 +48,20 @@ public class Driver{
         int numberMovies = input.nextInt();
         Library library = new Library(numberMovies);
     }
-
-    /**
-     * 添加电影
-     */
     private void addAMovie() {
         System.out.println("Enter the Movie id:");
         int id = input.nextInt();
         input.nextLine();
         System.out.println("Enter the Movie name:");
-//        input.nextLine();
         String movieName = input.nextLine();
         System.out.println("Enter the release year:");
         int releaseYear = input.nextInt();
-        input.nextLine();//清除缓冲区中的换行符
+        input.nextLine();
         System.out.println("Please enter the initials of the director's name:");
         String director = input.nextLine();
         System.out.println("Enter the ranking of this movie:");
         int ranking = input.nextInt();
-        input.nextLine();//清除缓冲区中的换行符
+        input.nextLine();
         System.out.println("Is this movie win an Oscar?Yes or No?:");
         String oscarOrNot = input.nextLine();
 
@@ -82,17 +76,10 @@ public class Driver{
         }
     }
 
-    /**
-     * 打印所有电影
-     */
     private void printAllMovies() {
         System.out.println("The Movie Library is:");
         System.out.println(Library.list());
     }
-
-    /**
-     * 查找单个电影 根据电影名
-     */
     private void findAMovie() {
         input.nextLine();
         System.out.print("Please enter a movie name you favor:");
@@ -105,10 +92,6 @@ public class Driver{
             System.out.println("Sorry,i can't find the [movie] in the Movie library");
         }
     }
-
-    /**
-     * 删除电影 根据电影id
-     */
     private void deleteAMovie() {
         input.nextLine();
         System.out.println("What do you want to delete(by id):");
@@ -121,25 +104,20 @@ public class Driver{
             System.out.println("delete success!");
         }
     }
-
-    /**
-     * 更新电影数据
-     */
     private void updateMovie() {
         System.out.println("Enter the Movie id:");
         int id = input.nextInt();
         input.nextLine();
         System.out.println("Enter the Movie name:");
-//        input.nextLine();
         String movieName = input.nextLine();
         System.out.println("Enter the release year:");
         int releaseYear = input.nextInt();
-        input.nextLine();//清除缓冲区中的换行符
+        input.nextLine();
         System.out.println("Please enter the initials of the director's name:");
         String director = input.nextLine();
         System.out.println("Enter the ranking of this movie:");
         int ranking = input.nextInt();
-        input.nextLine();//清除缓冲区中的换行符
+        input.nextLine();
         System.out.println("Is this movie win an Oscar?Yes or No?:");
         String oscarOrNot = input.nextLine();
         Movie film = new Movie(id, movieName, releaseYear, director, ranking, oscarOrNot);
